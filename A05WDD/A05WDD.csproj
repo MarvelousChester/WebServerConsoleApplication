@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA8E730C-99FB-4649-B481-72044A89D6E6}</ProjectGuid>
+    <ProjectGuid>{EC57C39C-4427-4B62-8333-4CA74438D459}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WDDA05</RootNamespace>
-    <AssemblyName>WDDA05</AssemblyName>
+    <RootNamespace>A05WDD</RootNamespace>
+    <AssemblyName>A05WDD</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Listener.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResponseBuilder.cs" />
-    <Compile Include="ServerUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,0 +1,8 @@
+C:\Users\karandeep\source\WDDA05\A05WDD\bin\Debug\A05WDD.exe.config
+C:\Users\karandeep\source\WDDA05\A05WDD\bin\Debug\A05WDD.exe
+C:\Users\karandeep\source\WDDA05\A05WDD\bin\Debug\A05WDD.pdb
+C:\Users\karandeep\source\WDDA05\A05WDD\obj\Debug\A05WDD.csproj.AssemblyReference.cache
+C:\Users\karandeep\source\WDDA05\A05WDD\obj\Debug\A05WDD.csproj.SuggestedBindingRedirects.cache
+C:\Users\karandeep\source\WDDA05\A05WDD\obj\Debug\A05WDD.csproj.CoreCompileInputs.cache
+C:\Users\karandeep\source\WDDA05\A05WDD\obj\Debug\A05WDD.exe
+C:\Users\karandeep\source\WDDA05\A05WDD\obj\Debug\A05WDD.pdb
