@@ -11,11 +11,38 @@ namespace WDDA05
 		static void Main(string[] args)
 		{
 			// Get Args
-			const int MIN_ARGS = 2;
+			const int MIN_ARGS = 3;
 
-			Console.WriteLine(args.Length);
+			// Validate Length and 3 args given
+			if(args.Length == MIN_ARGS) {
+			
+			
+			}
+            else
+            {
+
+				Console.WriteLine("Invalid Amount of Args Provided");
+				
+            }
+
+            // CALL FUNCTION PARSE ARGS, PASS string and returns array with string
+            // –webRoot=C:\localWebSite –webIP=192.168.100.23 –webPort=5300
 
 
-		}
+            // Call Validation Method to validate each
+
+            // IP validation
+
+            // Port validation >0 < MAX PORT NUM
+
+            // VALIDATE FILE EXISTS AND PATH
+
+
+            // Call Server Listener with param
+
+
+
+
+        }
 	}
 }
