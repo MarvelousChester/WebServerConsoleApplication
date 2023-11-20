@@ -12,11 +12,18 @@ namespace WDDA05
 		{
 			// Get Args
 			const int MIN_ARGS = 3;
+			string webRoot;
+			string ip;
+			string port;
 
-			// Validate Length and 3 args given
-			if(args.Length == MIN_ARGS) {
-			
-			
+			// Validate Length and extract 3 args given
+			// –webRoot=C:\localWebSite –webIP=192.168.100.23 –webPort=5300
+			if (args.Length == MIN_ARGS) {
+
+				webRoot = args[0].Trim('=');
+				ip = args[1].Trim('=');
+				port = args[2].Trim('=');
+
 			}
             else
             {
@@ -25,8 +32,7 @@ namespace WDDA05
 				
             }
 
-            // CALL FUNCTION PARSE ARGS, PASS string and returns array with string
-            // –webRoot=C:\localWebSite –webIP=192.168.100.23 –webPort=5300
+         
 
 
             // Call Validation Method to validate each
@@ -42,7 +48,8 @@ namespace WDDA05
 
 
 
-
         }
+
+
 	}
 }
