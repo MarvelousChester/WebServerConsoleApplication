@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EC57C39C-4427-4B62-8333-4CA74438D459}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>A05WDD</RootNamespace>
-    <AssemblyName>A05WDD</AssemblyName>
+    <RootNamespace>myOwnWebServer</RootNamespace>
+    <AssemblyName>myOwnWebServer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

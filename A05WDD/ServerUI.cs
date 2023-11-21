@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace A05WDD
+namespace myOwnWebServer
 {
 
 	public static class ServerUI

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace A05WDD
+namespace myOwnWebServer
 {
 	public static class Logger 
 	{
@@ -24,7 +24,7 @@ namespace A05WDD
 				string workingDirectory = Environment.CurrentDirectory;
 				string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
-				DateTime dt = DateTime.Now;
+				DateTime dt = DateTime.UtcNow;
 				string filePath = projectDirectory + "/" + "myOwnWebServer.log";
 
 				string formattedMsg = dt.ToString() + logType + " " + message;

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDDA05", "WDDA05\WDDA05.csproj", "{AA8E730C-99FB-4649-B481-72044A89D6E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A05WDD", "A05WDD\A05WDD.csproj", "{EC57C39C-4427-4B62-8333-4CA74438D459}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myOwnWebServer", "A05WDD\myOwnWebServer.csproj", "{EC57C39C-4427-4B62-8333-4CA74438D459}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
