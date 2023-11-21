@@ -27,7 +27,7 @@ namespace myOwnWebServer
 				DateTime dt = DateTime.UtcNow;
 				string filePath = projectDirectory + "/" + "myOwnWebServer.log";
 
-				string formattedMsg = dt.ToString() + logType + " " + message;
+				string formattedMsg = dt.ToString("") + logType + " " + message;
 				using (StreamWriter sw = File.AppendText(filePath))
 				{
 					sw.WriteLine(formattedMsg);
