@@ -72,27 +72,27 @@ namespace myOwnWebServer
 				server = new TcpListener(serverIP, serverPort);
 				server.Start();
 				Logger.NormalLog("Server Setup Successful");
+				Logger.RequestLog("Server Ready to Recieve Request");
 
 				while (true)
 				{
 
-				
-					Logger.NormalLog("Server Ready to Response");
+					
 					TcpClient client = server.AcceptTcpClient();
-
-					Logger.ResponseLog("Response Recieved");
-					Logger.NormalLog("Server Ready to Response");
+					Logger.RequestLog("Request Recieved");
 					// Read the msg 
 					byte[] bytes = new byte[1024];
-					string filePath = null;
+					
 
 					NetworkStream stream = client.GetStream();
 					int i = stream.Read(bytes, 0, bytes.Length);
 
 
-					filePath = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+					string request = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
 
-					
+
+					Logger.NormalLog("Preparing Response to request");
+					ResponseBuilder response = new ResponseBuilder(request);
 				}
 
 			}

@@ -1,9 +1,13 @@
-2023-11-21 20:12:40 [SERVER STARTED] Server recieved args –webRoot=C:\localWebSite,–webIP=127.0.0.1,–webPort=530
-2023-11-21 20:12:40 [SERVER STARTED] Setting up Server Listener
-2023-11-21 20:12:40  Server Setup Successful
-2023-11-21 20:12:40  Server Ready to Response
-2023-11-21 20:12:40 [RESPONSE] Response Recieved
-2023-11-21 20:12:40  Server Ready to Response
-2023-11-21 20:15:12  Server Ready to Response
-2023-11-21 20:15:12 [RESPONSE] Response Recieved
-2023-11-21 20:15:12  Server Ready to Response
+2023/11/22 13:49:21 [SERVER STARTED] Server recieved args –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=530
+2023/11/22 13:49:21 [SERVER STARTED] Setting up Server Listener
+2023/11/22 13:49:21  Server Setup Successful
+2023/11/22 13:49:21 [REQUEST] Server Ready to Recieve Request
+2023/11/22 13:49:26 [REQUEST] Request Recieved
+2023/11/22 13:49:26  Preparing Response to request
+2023/11/22 13:49:26  Opening File
+2023/11/22 13:49:26  Getting content-type
+2023/11/22 13:49:26  Reading Content
+2023/11/22 13:49:26  Reading Content
+2023/11/22 13:49:26  Reading Content Length
+2023/11/22 13:49:26  Getting Server
+2023/11/22 13:49:26  Getting Time
