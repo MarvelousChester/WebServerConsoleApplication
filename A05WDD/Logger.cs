@@ -12,6 +12,25 @@ namespace myOwnWebServer
 	public static class Logger 
 	{
 
+
+		public static void ClearLog()
+		{
+			try
+			{
+				string workingDirectory = Environment.CurrentDirectory;
+				string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+
+				string filePath = projectDirectory + "/" + "myOwnWebServer.log";
+					
+				File.WriteAllText(filePath, "");
+				
+			}
+			catch(Exception ex) {
+
+				ServerUI.displayServerMsg(ex.Message);
+			}
+		}
+
 		/// <summary>
 		/// Gets File Directory path to project folder, gets message and type of log and logs into file with date
 		/// </summary>
@@ -24,10 +43,11 @@ namespace myOwnWebServer
 				string workingDirectory = Environment.CurrentDirectory;
 				string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
-				DateTime dt = DateTime.UtcNow;
+				DateTime dt = DateTime.Now;
+
 				string filePath = projectDirectory + "/" + "myOwnWebServer.log";
 
-				string formattedMsg = dt.ToString("") + logType + " " + message;
+				string formattedMsg = dt.ToString("yyyy/M/d HH:mm:ss") + " "  + logType + " " + message;
 				using (StreamWriter sw = File.AppendText(filePath))
 				{
 					sw.WriteLine(formattedMsg);
@@ -46,7 +66,7 @@ namespace myOwnWebServer
 		public static void StartLog(string msg)
 		{
 
-			WriteLog(msg, "[Start]");
+			WriteLog(msg, "[SERVER STARTED]");
 
 		}
 

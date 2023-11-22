@@ -1,5 +1,9 @@
-2023-11-20 5:30:28 PM Test
-2023-11-21 3:20:51 PM[Start] Server recieved argsSystem.String[]
-2023-11-21 3:22:09 PM[Start] Server recieved args–webRoot=C:\localWebSite,–webIP=127.0.0.1,–webPort=5300
-2023-11-21 3:22:34 PM[Start] Server recieved args–webRoot=C:\localWebSite,–webIP=127.0.0.1,–webPort=5300
-2023-11-21 8:24:22 PM[Start] Server recieved args–webRoot=C:\localWebSite,–webIP=127.0.0.1,–webPort=5300
+2023-11-21 20:12:40 [SERVER STARTED] Server recieved args –webRoot=C:\localWebSite,–webIP=127.0.0.1,–webPort=530
+2023-11-21 20:12:40 [SERVER STARTED] Setting up Server Listener
+2023-11-21 20:12:40  Server Setup Successful
+2023-11-21 20:12:40  Server Ready to Response
+2023-11-21 20:12:40 [RESPONSE] Response Recieved
+2023-11-21 20:12:40  Server Ready to Response
+2023-11-21 20:15:12  Server Ready to Response
+2023-11-21 20:15:12 [RESPONSE] Response Recieved
+2023-11-21 20:15:12  Server Ready to Response

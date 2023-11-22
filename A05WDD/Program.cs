@@ -16,8 +16,9 @@ namespace myOwnWebServer
 
 			// CALL CLEAR LOG 
 
+			Logger.ClearLog();
 
-			Logger.StartLog($"Server recieved args{string.Join(",", args)}");
+			Logger.StartLog($"Server recieved args {string.Join(",", args)}");
 			// Accept Args
 			const int MIN_ARGS = 3;
 			string webRoot = "";
@@ -59,24 +60,40 @@ namespace myOwnWebServer
 			// TCP/ IP Listener Test create here
 
 			// Test if IP Exists and port valid
+			TcpListener server = null;
 			try
 			{
-				TcpListener server = null;
+
+				Logger.StartLog("Setting up Server Listener");
+
 				IPAddress serverIP = IPAddress.Parse(ip);
 				Int32 serverPort = Int32.Parse(port);
 
 				server = new TcpListener(serverIP, serverPort);
 				server.Start();
+				Logger.NormalLog("Server Setup Successful");
 
-				TcpClient client = server.AcceptTcpClient();
+				while (true)
+				{
 
-				// Read the msg 
-				byte[] bytes = new byte[1024];
-				string filePath = null;
+				
+					Logger.NormalLog("Server Ready to Response");
+					TcpClient client = server.AcceptTcpClient();
 
-				NetworkStream stream = client.GetStream();
-				int i = stream.Read(bytes, 0, bytes.Length);
+					Logger.ResponseLog("Response Recieved");
+					Logger.NormalLog("Server Ready to Response");
+					// Read the msg 
+					byte[] bytes = new byte[1024];
+					string filePath = null;
 
+					NetworkStream stream = client.GetStream();
+					int i = stream.Read(bytes, 0, bytes.Length);
+
+
+					filePath = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+
+					
+				}
 
 			}
 			catch (Exception ex)
@@ -84,7 +101,12 @@ namespace myOwnWebServer
 				ServerUI.displayServerMsg(ex.Message);
 				Environment.Exit(0);
 			}
+			finally
+			{
+				server.Stop();
+			}
 
 		}
+
 	}
 }
