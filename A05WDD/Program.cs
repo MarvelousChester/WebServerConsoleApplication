@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Security;
 
 namespace myOwnWebServer
 {
@@ -94,11 +95,13 @@ namespace myOwnWebServer
 					Logger.NormalLog("Preparing Response to request");
 					ResponseBuilder response = new ResponseBuilder(request, webRoot);
 
-					string responseMSG = response.ResponseMsg();
+					byte[] bMsg = response.ResponseMsg();
 					// Send back the response
-					byte[] bMsg = Encoding.ASCII.GetBytes(responseMSG);
-					ServerUI.displayServerMsg("Message Sent Back: {0}", responseMSG);
+					ServerUI.displayServerMsg("Message Sent Back: {0}", Encoding.ASCII.GetString(bMsg));
 					stream.Write(bMsg, 0, bMsg.Length);
+
+					stream.Close();
+					client.Close();
 				}
 
 			}

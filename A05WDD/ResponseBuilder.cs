@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Data;
 using System.Text.RegularExpressions;
-
+using System.Drawing;
 
 
 namespace myOwnWebServer
@@ -18,7 +18,7 @@ namespace myOwnWebServer
 		private string method;
 		private string contentType;
 		private long contentLength;
-		private string content;
+		private byte[] content;
 		private string server;
 		private string date;
 		private string request;
@@ -31,7 +31,19 @@ namespace myOwnWebServer
 			Logger.NormalLog("Getting Path from Request");
 			string pathPattern = @"(?<=GET\s)(.*?)(?=\sHTTP/1.1)";
 
-			string path = webRoot + "\\" + Regex.Match(requestMsg, pathPattern).Value;
+			
+			string requestFile = Regex.Match(requestMsg, pathPattern).Value;
+		
+			if (requestFile.StartsWith("/"))
+			{
+
+				requestFile =  requestFile.Replace("/", "\\");
+				path = webRoot + requestFile;
+			}
+			else
+			{
+				path = webRoot + "\\" + requestFile;
+			}
 
 			request = requestMsg;
 			request = request.Replace("\r", " ");
@@ -69,7 +81,7 @@ namespace myOwnWebServer
 					contentLength = fileInfo.Length;
 
 					Logger.NormalLog("Setting up Content");
-					content = File.ReadAllText(path);
+					content = File.ReadAllBytes(path);
 
 					Logger.NormalLog("Getting Server");
 					server = "Llanfairpwllgwyngyll";
@@ -81,10 +93,10 @@ namespace myOwnWebServer
 
 					HTTPCode = "200 OK";
 				}
-				// ************
-				// HTML
-				// ***************
-				if (extension == ".html" || extension == ".htm") {
+				else if (extension == ".html" || extension == ".htm") {
+					// ************
+					// HTML
+					// ***************
 
 					Logger.NormalLog("Setting content-type");
 					contentType = "text/html";
@@ -93,7 +105,7 @@ namespace myOwnWebServer
 					contentLength = fileInfo.Length;
 
 					Logger.NormalLog("Setting up Content");
-					content = File.ReadAllText(path);
+					content = File.ReadAllBytes(path);
 
 					Logger.NormalLog("Getting Server");
 					server = "Llanfairpwllgwyngyll";
@@ -107,11 +119,11 @@ namespace myOwnWebServer
 					HTTPCode = "200 OK";
 
 				}
-				// ************
-				// JPEG
-				// *************** 
-				if(extension == "jpeg" || extension == "jpg")
+				else if(extension == ".jpeg" || extension == ".jpg")
 				{
+					// ************
+					// JPEG
+					// *************** 
 					Logger.NormalLog("Setting content-type");
 					contentType = "image/jpeg";
 
@@ -119,7 +131,8 @@ namespace myOwnWebServer
 					contentLength = fileInfo.Length;
 
 					Logger.NormalLog("Setting up Content");
-					content = File.ReadAllText(path); // Change to Byte if not readable in Text
+					
+					content = File.ReadAllBytes(path); // Change to Byte if not readable in Text
 
 					Logger.NormalLog("Setting Server");
 					server = "Llanfairpwllgwyngyll";
@@ -164,10 +177,13 @@ namespace myOwnWebServer
 		}
 
 
-		public string ResponseMsg()
+
+		public byte[] ResponseMsg()
 		{
-			string responseMsg = protocol + " " + HTTPCode + "\r\nDate: " + date +"\r\nContent-Type: " + contentType + "\r\nServer: " + server + "\r\nContent-Length: "  + contentLength + "\r\n\r\n" + content;
-			return responseMsg;		
+			string responseMsg = protocol + " " + HTTPCode + "\r\nDate: " + date +"\r\nContent-Type: " + contentType + "\r\nServer: " + server + "\r\nContent-Length: "  + contentLength + "\r\n\r\n";
+			byte[] responseMSGByte = Encoding.ASCII.GetBytes(responseMsg);
+			byte[] withContent = responseMSGByte.Concat(content).ToArray();
+			return withContent;		
 		}
 	}
 }

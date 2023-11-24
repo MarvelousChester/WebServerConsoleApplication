@@ -1,109 +1,22 @@
-2023/11/24 14:19:50 [SERVER STARTED] Server recieved args –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=5300
-2023/11/24 14:19:50 [SERVER STARTED] Setting up Server Listener
-2023/11/24 14:19:50  Server Setup Successful
-2023/11/24 14:19:50 [REQUEST] Server Ready to Recieve Request
-2023/11/24 14:19:53 [REQUEST] Request Recieved
-2023/11/24 14:19:53  Preparing Response to request
-2023/11/24 14:19:53  Getting Path from Request
-2023/11/24 14:19:53  Opening File
-2023/11/24 14:19:53  Getting content-type
-2023/11/24 14:19:53  Reading Extension
-2023/11/24 14:19:53  Setting content-type
-2023/11/24 14:19:53  Reading Content Length
-2023/11/24 14:19:53 [ERROR] Could not find file 'C:\localWebsite\WDD\A02-Animal-Serve-PHP\/index.html'.
-2023/11/24 14:20:06 [REQUEST] Request Recieved
-2023/11/24 14:20:06  Preparing Response to request
-2023/11/24 14:20:06  Getting Path from Request
-2023/11/24 14:20:06  Opening File
-2023/11/24 14:20:06  Getting content-type
-2023/11/24 14:20:06  Reading Extension
-2023/11/24 14:20:06  Setting content-type
-2023/11/24 14:20:06  Reading Content Length
-2023/11/24 14:20:06  Setting up Content
-2023/11/24 14:20:06  Getting Server
-2023/11/24 14:20:06  Getting Time
-2023/11/24 14:20:06  Getting Server
-2023/11/24 14:20:32 [REQUEST] Request Recieved
-2023/11/24 14:20:32  Preparing Response to request
-2023/11/24 14:20:32  Getting Path from Request
-2023/11/24 14:20:32  Opening File
-2023/11/24 14:20:32  Getting content-type
-2023/11/24 14:20:32  Reading Extension
-2023/11/24 14:20:32 [REQUEST] Request Recieved
-2023/11/24 14:20:32  Preparing Response to request
-2023/11/24 14:20:32  Getting Path from Request
-2023/11/24 14:20:32  Opening File
-2023/11/24 14:20:32  Getting content-type
-2023/11/24 14:20:32  Reading Extension
-2023/11/24 14:20:33 [REQUEST] Request Recieved
-2023/11/24 14:20:33  Preparing Response to request
-2023/11/24 14:20:33  Getting Path from Request
-2023/11/24 14:20:33  Opening File
-2023/11/24 14:20:33  Getting content-type
-2023/11/24 14:20:33  Reading Extension
-2023/11/24 14:20:33  Setting content-type
-2023/11/24 14:20:33  Reading Content Length
-2023/11/24 14:20:33  Setting up Content
-2023/11/24 14:20:33  Getting Server
-2023/11/24 14:20:33  Getting Time
-2023/11/24 14:20:33  Getting Server
-2023/11/24 14:21:07 [REQUEST] Request Recieved
-2023/11/24 14:21:07  Preparing Response to request
-2023/11/24 14:21:07  Getting Path from Request
-2023/11/24 14:21:07  Opening File
-2023/11/24 14:21:07  Getting content-type
-2023/11/24 14:21:07  Reading Extension
-2023/11/24 14:21:07 [REQUEST] Request Recieved
-2023/11/24 14:21:07  Preparing Response to request
-2023/11/24 14:21:07  Getting Path from Request
-2023/11/24 14:21:07  Opening File
-2023/11/24 14:21:07  Getting content-type
-2023/11/24 14:21:07  Reading Extension
-2023/11/24 14:21:38 [REQUEST] Request Recieved
-2023/11/24 14:21:38  Preparing Response to request
-2023/11/24 14:21:38  Getting Path from Request
-2023/11/24 14:21:38  Opening File
-2023/11/24 14:21:38  Getting content-type
-2023/11/24 14:21:38  Reading Extension
-2023/11/24 14:21:38  Setting content-type
-2023/11/24 14:21:38  Reading Content Length
-2023/11/24 14:21:38  Setting up Content
-2023/11/24 14:21:38  Getting Server
-2023/11/24 14:21:38  Getting Time
-2023/11/24 14:21:38  Getting Server
-2023/11/24 14:22:03 [REQUEST] Request Recieved
-2023/11/24 14:22:03  Preparing Response to request
-2023/11/24 14:22:03  Getting Path from Request
-2023/11/24 14:22:03  Opening File
-2023/11/24 14:22:03  Getting content-type
-2023/11/24 14:22:03  Reading Extension
-2023/11/24 14:22:03  Setting content-type
-2023/11/24 14:22:03  Reading Content Length
-2023/11/24 14:22:03  Setting up Content
-2023/11/24 14:22:03  Getting Server
-2023/11/24 14:22:03  Getting Time
-2023/11/24 14:22:03  Getting Server
-2023/11/24 14:22:03 [REQUEST] Request Recieved
-2023/11/24 14:22:03  Preparing Response to request
-2023/11/24 14:22:03  Getting Path from Request
-2023/11/24 14:22:03  Opening File
-2023/11/24 14:22:03  Getting content-type
-2023/11/24 14:22:03  Reading Extension
-2023/11/24 14:22:03 [REQUEST] Request Recieved
-2023/11/24 14:22:03  Preparing Response to request
-2023/11/24 14:22:03  Getting Path from Request
-2023/11/24 14:22:03  Opening File
-2023/11/24 14:22:03  Getting content-type
-2023/11/24 14:22:03  Reading Extension
-2023/11/24 14:22:03 [REQUEST] Request Recieved
-2023/11/24 14:22:03  Preparing Response to request
-2023/11/24 14:22:03  Getting Path from Request
-2023/11/24 14:22:03  Opening File
-2023/11/24 14:22:03  Getting content-type
-2023/11/24 14:22:03  Reading Extension
-2023/11/24 14:22:03 [REQUEST] Request Recieved
-2023/11/24 14:22:03  Preparing Response to request
-2023/11/24 14:22:03  Getting Path from Request
-2023/11/24 14:22:03  Opening File
-2023/11/24 14:22:03  Getting content-type
-2023/11/24 14:22:03  Reading Extension
+2023/11/24 15:19:40 [SERVER STARTED] Server recieved args –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=5300
+2023/11/24 15:19:40 [SERVER STARTED] Setting up Server Listener
+2023/11/24 15:19:40  Server Setup Successful
+2023/11/24 15:19:40 [REQUEST] Server Ready to Recieve Request
+2023/11/24 15:19:42 [REQUEST] Request Recieved
+2023/11/24 15:19:42  Preparing Response to request
+2023/11/24 15:19:42  Getting Path from Request
+2023/11/24 15:19:42  Opening File
+2023/11/24 15:19:42  Getting content-type
+2023/11/24 15:19:42  Reading Extension
+2023/11/24 15:19:42  Setting content-type
+2023/11/24 15:19:42  Reading Content Length
+2023/11/24 15:19:42  Setting up Content
+2023/11/24 15:19:42  Getting Server
+2023/11/24 15:19:42  Getting Time
+2023/11/24 15:19:42  Getting Server
+2023/11/24 15:19:42 [REQUEST] Request Recieved
+2023/11/24 15:19:42  Preparing Response to request
+2023/11/24 15:19:42  Getting Path from Request
+2023/11/24 15:19:42  Opening File
+2023/11/24 15:19:42  Getting content-type
+2023/11/24 15:19:42  Reading Extension
