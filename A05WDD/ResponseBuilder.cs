@@ -60,6 +60,8 @@ namespace myOwnWebServer
 			method = requestFields[0];
 			protocol = "HTTP/1.1";
 
+
+
 			// Get Content Type
 			try 
 			{
@@ -133,6 +135,31 @@ namespace myOwnWebServer
 					Logger.NormalLog("Setting up Content");
 					
 					content = File.ReadAllBytes(path); // Change to Byte if not readable in Text
+
+					Logger.NormalLog("Setting Server");
+					server = "Llanfairpwllgwyngyll";
+
+					Logger.NormalLog("Setting Time");
+					DateTime dt = DateTime.UtcNow;
+					TimeZoneInfo timeInfo = TimeZoneInfo.Local;
+					date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+
+					HTTPCode = "200 OK";
+				}
+				else if (extension == ".gif")
+				{
+					// ************
+					// GIF
+					// *************** 
+					Logger.NormalLog("Setting content-type");
+					contentType = "image/gif";
+
+					Logger.NormalLog("Reading Content Length");
+					contentLength = fileInfo.Length;
+
+					Logger.NormalLog("Setting up Content");
+
+					content = File.ReadAllBytes(path);
 
 					Logger.NormalLog("Setting Server");
 					server = "Llanfairpwllgwyngyll";

@@ -1,15 +1,35 @@
-2023/11/24 15:21:19 [SERVER STARTED] Server recieved args –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=5300
-2023/11/24 15:21:19 [SERVER STARTED] Setting up Server Listener
-2023/11/24 15:21:19  Server Setup Successful
-2023/11/24 15:21:19 [REQUEST] Server Ready to Recieve Request
-2023/11/24 15:21:22 [REQUEST] Request Recieved
-2023/11/24 15:21:22  Preparing Response to request
-2023/11/24 15:21:22  Getting Path from Request
-2023/11/24 15:21:22  Opening File
-2023/11/24 15:21:22  Getting content-type
-2023/11/24 15:21:22  Reading Extension
-2023/11/24 15:21:22  Setting content-type
-2023/11/24 15:21:22  Reading Content Length
-2023/11/24 15:21:22  Setting up Content
-2023/11/24 15:21:22  Setting Server
-2023/11/24 15:21:22  Setting Time
+2023/11/24 16:01:55 [SERVER STARTED] Server recieved args –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=5300
+2023/11/24 16:01:55 [SERVER STARTED] Setting up Server Listener
+2023/11/24 16:01:58 [REQUEST] Request Recieved
+2023/11/24 16:01:58  Preparing Response to request
+2023/11/24 16:01:58  Getting Path from Request
+2023/11/24 16:01:58  Opening File
+2023/11/24 16:01:58  Getting content-type
+2023/11/24 16:01:58  Reading Extension
+2023/11/24 16:01:58  Setting content-type
+2023/11/24 16:01:58  Reading Content Length
+2023/11/24 16:01:58  Setting up Content
+2023/11/24 16:01:58  Setting Server
+2023/11/24 16:01:58  Setting Time
+2023/11/24 16:02:05 [REQUEST] Request Recieved
+2023/11/24 16:02:05  Preparing Response to request
+2023/11/24 16:02:05  Getting Path from Request
+2023/11/24 16:02:05  Opening File
+2023/11/24 16:02:05  Getting content-type
+2023/11/24 16:02:05  Reading Extension
+2023/11/24 16:02:05  Setting content-type
+2023/11/24 16:02:05  Reading Content Length
+2023/11/24 16:02:05  Setting up Content
+2023/11/24 16:02:05  Setting Server
+2023/11/24 16:02:05  Setting Time
+2023/11/24 16:02:06 [REQUEST] Request Recieved
+2023/11/24 16:02:06  Preparing Response to request
+2023/11/24 16:02:06  Getting Path from Request
+2023/11/24 16:02:06  Opening File
+2023/11/24 16:02:06  Getting content-type
+2023/11/24 16:02:06  Reading Extension
+2023/11/24 16:02:06  Setting content-type
+2023/11/24 16:02:06  Reading Content Length
+2023/11/24 16:02:06  Setting up Content
+2023/11/24 16:02:06  Setting Server
+2023/11/24 16:02:06  Setting Time
