@@ -92,12 +92,19 @@ namespace myOwnWebServer
 
 
 					Logger.NormalLog("Preparing Response to request");
-					ResponseBuilder response = new ResponseBuilder(request);
+					ResponseBuilder response = new ResponseBuilder(request, webRoot);
+
+					string responseMSG = response.ResponseMsg();
+					// Send back the response
+					byte[] bMsg = Encoding.ASCII.GetBytes(responseMSG);
+					ServerUI.displayServerMsg("Message Sent Back: {0}", responseMSG);
+					stream.Write(bMsg, 0, bMsg.Length);
 				}
 
 			}
 			catch (Exception ex)
 			{
+				// WRITE SERVER ERROR
 				ServerUI.displayServerMsg(ex.Message);
 				Environment.Exit(0);
 			}
