@@ -1,5 +1,319 @@
-2023/11/25 19:38:56 [SERVER STARTED] Server recieved args –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=5300
-2023/11/25 19:38:56 [SERVER STARTED] Server Received Args
-2023/11/25 19:38:56 [SERVER STARTED] Setting up Server Listener
-2023/11/25 19:38:56  Server Setup Successful
-2023/11/25 19:38:56 [REQUEST] Server Ready to Receive Request
+2023/11/25 22:03:47 [SERVER STARTED] Server Recieved Args: –webRoot=C:\localWebsite\WDD\A02-Animal-Serve-PHP,–webIP=127.0.0.1,–webPort=5300
+2023/11/25 22:03:47 [SERVER STARTED] Setting up Server Listener
+2023/11/25 22:03:47  Server Setup Successful
+2023/11/25 22:03:47  Server Ready to Receive Request
+2023/11/25 22:03:48 [REQUEST] Request Recieved
+2023/11/25 22:03:48  Preparing Response to request
+2023/11/25 22:03:48  Getting Path from Request
+2023/11/25 22:03:48 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\
+2023/11/25 22:03:48 [ERROR] Invalid Type Given
+2023/11/25 22:03:48 [ERROR] 404 Not Found
+2023/11/25 22:03:48  Building Response Message
+2023/11/25 22:03:48 [RESPONSE] Sending Response....
+2023/11/25 22:03:48 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:03:48  Closing Connection
+2023/11/25 22:03:48  Connection Successfully Closed
+2023/11/25 22:03:48  Server Ready to Receive Request
+2023/11/25 22:03:57 [REQUEST] Request Recieved
+2023/11/25 22:03:57  Preparing Response to request
+2023/11/25 22:03:57  Getting Path from Request
+2023/11/25 22:03:57 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\gj
+2023/11/25 22:03:57 [ERROR] Invalid Type Given
+2023/11/25 22:03:57 [ERROR] 404 Not Found
+2023/11/25 22:03:57  Building Response Message
+2023/11/25 22:03:57 [RESPONSE] Sending Response....
+2023/11/25 22:03:57 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:03:57  Closing Connection
+2023/11/25 22:03:57  Connection Successfully Closed
+2023/11/25 22:03:57  Server Ready to Receive Request
+2023/11/25 22:04:01 [REQUEST] Request Recieved
+2023/11/25 22:04:01  Preparing Response to request
+2023/11/25 22:04:01  Getting Path from Request
+2023/11/25 22:04:01 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\gj
+2023/11/25 22:04:01 [ERROR] Invalid Type Given
+2023/11/25 22:04:01 [ERROR] 404 Not Found
+2023/11/25 22:04:01  Building Response Message
+2023/11/25 22:04:01 [RESPONSE] Sending Response....
+2023/11/25 22:04:01 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:04:01  Closing Connection
+2023/11/25 22:04:01  Connection Successfully Closed
+2023/11/25 22:04:01  Server Ready to Receive Request
+2023/11/25 22:04:09 [REQUEST] Request Recieved
+2023/11/25 22:04:09  Preparing Response to request
+2023/11/25 22:04:09  Getting Path from Request
+2023/11/25 22:04:09 [REQUEST] GETGET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\gyiiogyuii;uy;u;
+2023/11/25 22:04:09 [ERROR] Invalid Type Given
+2023/11/25 22:04:09 [ERROR] 404 Not Found
+2023/11/25 22:04:09  Building Response Message
+2023/11/25 22:04:09 [RESPONSE] Sending Response....
+2023/11/25 22:04:09 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:04:09  Closing Connection
+2023/11/25 22:04:09  Connection Successfully Closed
+2023/11/25 22:04:09  Server Ready to Receive Request
+2023/11/25 22:04:59 [REQUEST] Request Recieved
+2023/11/25 22:04:59  Preparing Response to request
+2023/11/25 22:04:59  Getting Path from Request
+2023/11/25 22:04:59 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\
+2023/11/25 22:04:59 [ERROR] Invalid Type Given
+2023/11/25 22:04:59 [ERROR] 404 Not Found
+2023/11/25 22:04:59  Building Response Message
+2023/11/25 22:04:59 [RESPONSE] Sending Response....
+2023/11/25 22:04:59 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:04:59  Closing Connection
+2023/11/25 22:04:59  Connection Successfully Closed
+2023/11/25 22:04:59  Server Ready to Receive Request
+2023/11/25 22:05:02 [REQUEST] Request Recieved
+2023/11/25 22:05:02  Preparing Response to request
+2023/11/25 22:05:02  Getting Path from Request
+2023/11/25 22:05:02 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\php-zoo.html
+2023/11/25 22:05:02  Opening File
+2023/11/25 22:05:02  Getting content-type
+2023/11/25 22:05:02  Reading Extension
+2023/11/25 22:05:02  Setting content-type
+2023/11/25 22:05:02  Reading Content Length
+2023/11/25 22:05:02  Setting up Content
+2023/11/25 22:05:02  Getting Server
+2023/11/25 22:05:02  Getting Time
+2023/11/25 22:05:02  Getting Server
+2023/11/25 22:05:02  Building Response Message
+2023/11/25 22:05:02 [RESPONSE] Sending Response....
+2023/11/25 22:05:02 [RESPONSE] Response Successfully Sent: 
+HTTP/1.1 200 OK Date: Sunday, November 26, 2023 03:05:02 GMT Server: Llanfairpwllgwyngyll Content-Type: text/html Content:Length: 4327  
+2023/11/25 22:05:02  Closing Connection
+2023/11/25 22:05:02  Connection Successfully Closed
+2023/11/25 22:05:02  Server Ready to Receive Request
+2023/11/25 22:05:12 [REQUEST] Request Recieved
+2023/11/25 22:05:12  Preparing Response to request
+2023/11/25 22:05:12  Getting Path from Request
+2023/11/25 22:05:12 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\cgi-zoo.html
+2023/11/25 22:05:12  Opening File
+2023/11/25 22:05:12  Getting content-type
+2023/11/25 22:05:12  Reading Extension
+2023/11/25 22:05:12  Setting content-type
+2023/11/25 22:05:12  Reading Content Length
+2023/11/25 22:05:12  Setting up Content
+2023/11/25 22:05:12  Getting Server
+2023/11/25 22:05:12  Getting Time
+2023/11/25 22:05:12  Getting Server
+2023/11/25 22:05:12  Building Response Message
+2023/11/25 22:05:12 [RESPONSE] Sending Response....
+2023/11/25 22:05:12 [RESPONSE] Response Successfully Sent: 
+HTTP/1.1 200 OK Date: Sunday, November 26, 2023 03:05:12 GMT Server: Llanfairpwllgwyngyll Content-Type: text/html Content:Length: 4310  
+2023/11/25 22:05:12  Closing Connection
+2023/11/25 22:05:12  Connection Successfully Closed
+2023/11/25 22:05:12  Server Ready to Receive Request
+2023/11/25 22:05:18 [REQUEST] Request Recieved
+2023/11/25 22:05:18  Preparing Response to request
+2023/11/25 22:05:18  Getting Path from Request
+2023/11/25 22:05:18 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\php-zoo.html
+2023/11/25 22:05:18  Opening File
+2023/11/25 22:05:18  Getting content-type
+2023/11/25 22:05:18  Reading Extension
+2023/11/25 22:05:18  Setting content-type
+2023/11/25 22:05:18  Reading Content Length
+2023/11/25 22:05:18  Setting up Content
+2023/11/25 22:05:18  Getting Server
+2023/11/25 22:05:18  Getting Time
+2023/11/25 22:05:18  Getting Server
+2023/11/25 22:05:18  Building Response Message
+2023/11/25 22:05:18 [RESPONSE] Sending Response....
+2023/11/25 22:05:18 [RESPONSE] Response Successfully Sent: 
+HTTP/1.1 200 OK Date: Sunday, November 26, 2023 03:05:18 GMT Server: Llanfairpwllgwyngyll Content-Type: text/html Content:Length: 4327  
+2023/11/25 22:05:18  Closing Connection
+2023/11/25 22:05:18  Connection Successfully Closed
+2023/11/25 22:05:18  Server Ready to Receive Request
+2023/11/25 22:05:18 [REQUEST] Request Recieved
+2023/11/25 22:05:18  Preparing Response to request
+2023/11/25 22:05:18  Getting Path from Request
+2023/11/25 22:05:18 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\stylesheet.css
+2023/11/25 22:05:18  Opening File
+2023/11/25 22:05:18  Getting content-type
+2023/11/25 22:05:18  Reading Extension
+2023/11/25 22:05:18 [ERROR] Invalid Type Given
+2023/11/25 22:05:18 [ERROR] 415 Unsupported Media Type
+2023/11/25 22:05:18  Building Response Message
+2023/11/25 22:05:18 [RESPONSE] Sending Response....
+2023/11/25 22:05:18 [RESPONSE] Response Successfully Sent: 415 Unsupported Media Type
+2023/11/25 22:05:18  Closing Connection
+2023/11/25 22:05:18  Connection Successfully Closed
+2023/11/25 22:05:18  Server Ready to Receive Request
+2023/11/25 22:05:18 [REQUEST] Request Recieved
+2023/11/25 22:05:18  Preparing Response to request
+2023/11/25 22:05:18  Getting Path from Request
+2023/11/25 22:05:18 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\stylesheet.css
+2023/11/25 22:05:18  Opening File
+2023/11/25 22:05:18  Getting content-type
+2023/11/25 22:05:18  Reading Extension
+2023/11/25 22:05:18 [ERROR] Invalid Type Given
+2023/11/25 22:05:18 [ERROR] 415 Unsupported Media Type
+2023/11/25 22:05:18  Building Response Message
+2023/11/25 22:05:18 [RESPONSE] Sending Response....
+2023/11/25 22:05:18 [RESPONSE] Response Successfully Sent: 415 Unsupported Media Type
+2023/11/25 22:05:18  Closing Connection
+2023/11/25 22:05:18  Connection Successfully Closed
+2023/11/25 22:05:18  Server Ready to Receive Request
+2023/11/25 22:05:18 [REQUEST] Request Recieved
+2023/11/25 22:05:18  Preparing Response to request
+2023/11/25 22:05:18  Getting Path from Request
+2023/11/25 22:05:18 [REQUEST]  is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\
+2023/11/25 22:05:18 [ERROR] Invalid Type Given
+2023/11/25 22:05:18 [ERROR] 505 HTTP Version Not Supported
+2023/11/25 22:05:18  Building Response Message
+2023/11/25 22:05:18 [RESPONSE] Sending Response....
+2023/11/25 22:05:18 [RESPONSE] Response Successfully Sent: 505 HTTP Version Not Supported
+2023/11/25 22:05:18  Closing Connection
+2023/11/25 22:05:18  Connection Successfully Closed
+2023/11/25 22:05:18  Server Ready to Receive Request
+2023/11/25 22:05:23 [REQUEST] Request Recieved
+2023/11/25 22:05:23  Preparing Response to request
+2023/11/25 22:05:23  Getting Path from Request
+2023/11/25 22:05:23 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\php-zoo.html
+2023/11/25 22:05:23  Opening File
+2023/11/25 22:05:23  Getting content-type
+2023/11/25 22:05:23  Reading Extension
+2023/11/25 22:05:23  Setting content-type
+2023/11/25 22:05:23  Reading Content Length
+2023/11/25 22:05:23  Setting up Content
+2023/11/25 22:05:23  Getting Server
+2023/11/25 22:05:23  Getting Time
+2023/11/25 22:05:23  Getting Server
+2023/11/25 22:05:23  Building Response Message
+2023/11/25 22:05:23 [RESPONSE] Sending Response....
+2023/11/25 22:05:23 [RESPONSE] Response Successfully Sent: 
+HTTP/1.1 200 OK Date: Sunday, November 26, 2023 03:05:23 GMT Server: Llanfairpwllgwyngyll Content-Type: text/html Content:Length: 4327  
+2023/11/25 22:05:23  Closing Connection
+2023/11/25 22:05:23  Connection Successfully Closed
+2023/11/25 22:05:23  Server Ready to Receive Request
+2023/11/25 22:05:24 [REQUEST] Request Recieved
+2023/11/25 22:05:24  Preparing Response to request
+2023/11/25 22:05:24  Getting Path from Request
+2023/11/25 22:05:24 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\stylesheet.css
+2023/11/25 22:05:24  Opening File
+2023/11/25 22:05:24  Getting content-type
+2023/11/25 22:05:24  Reading Extension
+2023/11/25 22:05:24 [ERROR] Invalid Type Given
+2023/11/25 22:05:24 [ERROR] 415 Unsupported Media Type
+2023/11/25 22:05:24  Building Response Message
+2023/11/25 22:05:24 [RESPONSE] Sending Response....
+2023/11/25 22:05:24 [RESPONSE] Response Successfully Sent: 415 Unsupported Media Type
+2023/11/25 22:05:24  Closing Connection
+2023/11/25 22:05:24  Connection Successfully Closed
+2023/11/25 22:05:24  Server Ready to Receive Request
+2023/11/25 22:05:24 [REQUEST] Request Recieved
+2023/11/25 22:05:24  Preparing Response to request
+2023/11/25 22:05:24  Getting Path from Request
+2023/11/25 22:05:24 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\favicon.ico
+2023/11/25 22:05:24 [ERROR] Invalid Type Given
+2023/11/25 22:05:24 [ERROR] 404 Not Found
+2023/11/25 22:05:24  Building Response Message
+2023/11/25 22:05:24 [RESPONSE] Sending Response....
+2023/11/25 22:05:24 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:05:24  Closing Connection
+2023/11/25 22:05:24  Connection Successfully Closed
+2023/11/25 22:05:24  Server Ready to Receive Request
+2023/11/25 22:05:29 [REQUEST] Request Recieved
+2023/11/25 22:05:29  Preparing Response to request
+2023/11/25 22:05:29  Getting Path from Request
+2023/11/25 22:05:29 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\php-zoo.html
+2023/11/25 22:05:29  Opening File
+2023/11/25 22:05:29  Getting content-type
+2023/11/25 22:05:29  Reading Extension
+2023/11/25 22:05:29  Setting content-type
+2023/11/25 22:05:29  Reading Content Length
+2023/11/25 22:05:29  Setting up Content
+2023/11/25 22:05:29  Getting Server
+2023/11/25 22:05:29  Getting Time
+2023/11/25 22:05:29  Getting Server
+2023/11/25 22:05:29  Building Response Message
+2023/11/25 22:05:29 [RESPONSE] Sending Response....
+2023/11/25 22:05:29 [RESPONSE] Response Successfully Sent: 
+HTTP/1.1 200 OK Date: Sunday, November 26, 2023 03:05:29 GMT Server: Llanfairpwllgwyngyll Content-Type: text/html Content:Length: 4327  
+2023/11/25 22:05:29  Closing Connection
+2023/11/25 22:05:29  Connection Successfully Closed
+2023/11/25 22:05:29  Server Ready to Receive Request
+2023/11/25 22:05:29 [REQUEST] Request Recieved
+2023/11/25 22:05:30  Preparing Response to request
+2023/11/25 22:05:30  Getting Path from Request
+2023/11/25 22:05:30 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\stylesheet.css
+2023/11/25 22:05:30  Opening File
+2023/11/25 22:05:30  Getting content-type
+2023/11/25 22:05:30  Reading Extension
+2023/11/25 22:05:30 [ERROR] Invalid Type Given
+2023/11/25 22:05:30 [ERROR] 415 Unsupported Media Type
+2023/11/25 22:05:30  Building Response Message
+2023/11/25 22:05:30 [RESPONSE] Sending Response....
+2023/11/25 22:05:30 [RESPONSE] Response Successfully Sent: 415 Unsupported Media Type
+2023/11/25 22:05:30  Closing Connection
+2023/11/25 22:05:30  Connection Successfully Closed
+2023/11/25 22:05:30  Server Ready to Receive Request
+2023/11/25 22:05:30 [REQUEST] Request Recieved
+2023/11/25 22:05:30  Preparing Response to request
+2023/11/25 22:05:30  Getting Path from Request
+2023/11/25 22:05:30 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\php-zoo.html
+2023/11/25 22:05:30  Opening File
+2023/11/25 22:05:30  Getting content-type
+2023/11/25 22:05:30  Reading Extension
+2023/11/25 22:05:30  Setting content-type
+2023/11/25 22:05:30  Reading Content Length
+2023/11/25 22:05:30  Setting up Content
+2023/11/25 22:05:30  Getting Server
+2023/11/25 22:05:30  Getting Time
+2023/11/25 22:05:30  Getting Server
+2023/11/25 22:05:30  Building Response Message
+2023/11/25 22:05:30 [RESPONSE] Sending Response....
+2023/11/25 22:05:30 [RESPONSE] Response Successfully Sent: 
+HTTP/1.1 200 OK Date: Sunday, November 26, 2023 03:05:30 GMT Server: Llanfairpwllgwyngyll Content-Type: text/html Content:Length: 4327  
+2023/11/25 22:05:30  Closing Connection
+2023/11/25 22:05:30  Connection Successfully Closed
+2023/11/25 22:05:30  Server Ready to Receive Request
+2023/11/25 22:05:30 [REQUEST] Request Recieved
+2023/11/25 22:05:30  Preparing Response to request
+2023/11/25 22:05:30  Getting Path from Request
+2023/11/25 22:05:30 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\stylesheet.css
+2023/11/25 22:05:30  Opening File
+2023/11/25 22:05:30  Getting content-type
+2023/11/25 22:05:30  Reading Extension
+2023/11/25 22:05:30 [ERROR] Invalid Type Given
+2023/11/25 22:05:30 [ERROR] 415 Unsupported Media Type
+2023/11/25 22:05:30  Building Response Message
+2023/11/25 22:05:30 [RESPONSE] Sending Response....
+2023/11/25 22:05:30 [RESPONSE] Response Successfully Sent: 415 Unsupported Media Type
+2023/11/25 22:05:30  Closing Connection
+2023/11/25 22:05:30  Connection Successfully Closed
+2023/11/25 22:05:30  Server Ready to Receive Request
+2023/11/25 22:05:30 [REQUEST] Request Recieved
+2023/11/25 22:05:30  Preparing Response to request
+2023/11/25 22:05:30  Getting Path from Request
+2023/11/25 22:05:30 [REQUEST] GET is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\favicon.ico
+2023/11/25 22:05:30 [ERROR] Invalid Type Given
+2023/11/25 22:05:30 [ERROR] 404 Not Found
+2023/11/25 22:05:30  Building Response Message
+2023/11/25 22:05:30 [RESPONSE] Sending Response....
+2023/11/25 22:05:30 [RESPONSE] Response Successfully Sent: 404 Not Found
+2023/11/25 22:05:30  Closing Connection
+2023/11/25 22:05:30  Connection Successfully Closed
+2023/11/25 22:05:30  Server Ready to Receive Request
+2023/11/25 22:05:30 [REQUEST] Request Recieved
+2023/11/25 22:05:33  Preparing Response to request
+2023/11/25 22:05:33  Getting Path from Request
+2023/11/25 22:05:33 [REQUEST] POST is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\animals.php
+2023/11/25 22:05:33 [ERROR] Invalid Type Given
+2023/11/25 22:05:33 [ERROR] 405 Method Not Allowed
+2023/11/25 22:05:33  Building Response Message
+2023/11/25 22:05:33 [RESPONSE] Sending Response....
+2023/11/25 22:05:33 [RESPONSE] Response Successfully Sent: 405 Method Not Allowed
+2023/11/25 22:05:33  Closing Connection
+2023/11/25 22:05:33  Connection Successfully Closed
+2023/11/25 22:05:33  Server Ready to Receive Request
+2023/11/25 22:05:33 [REQUEST] Request Recieved
+2023/11/25 22:05:41  Preparing Response to request
+2023/11/25 22:05:41  Getting Path from Request
+2023/11/25 22:05:41 [REQUEST]  is used used for request for file C:\localWebsite\WDD\A02-Animal-Serve-PHP\
+2023/11/25 22:05:41 [ERROR] Invalid Type Given
+2023/11/25 22:05:41 [ERROR] 505 HTTP Version Not Supported
+2023/11/25 22:05:41  Building Response Message
+2023/11/25 22:05:41 [RESPONSE] Sending Response....
+2023/11/25 22:05:41 [RESPONSE] Response Successfully Sent: 505 HTTP Version Not Supported
+2023/11/25 22:05:41  Closing Connection
+2023/11/25 22:05:41  Connection Successfully Closed
+2023/11/25 22:05:41  Server Ready to Receive Request

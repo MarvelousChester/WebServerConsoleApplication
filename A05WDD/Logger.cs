@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+ * Name: Karandeep Sandhu
+  Project Name : myOwnWebServer
+  File Name : Logger.cs
+  Date : 2023 - 11 - 22
+  Purpose : Contains static class for logger and it's various functions
+ */
+
+
+using System;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace myOwnWebServer
@@ -12,7 +16,10 @@ namespace myOwnWebServer
 	public static class Logger 
 	{
 
-
+		// Name: ResponseBuilder
+		// Purpose: Clears the log file 
+		// Parameters: NONE
+		// RETURN:  NONE
 		public static void ClearLog()
 		{
 			try

@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+ * Name: Karandeep Sandhu
+  Project Name : myOwnWebServer
+  File Name : ResponseBuilder.cs
+  Date : 2023 - 11 - 22
+  Purpose : Contains class that builds a response response for a request given string message and web root
+ */
+
+
+using System;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Data;
 using System.Text.RegularExpressions;
-using System.Drawing;
-using System.Runtime.Remoting.Messaging;
+
 
 
 namespace myOwnWebServer
@@ -33,20 +38,54 @@ namespace myOwnWebServer
 
 		public bool ErrorFound { get { return errorFound; } }
 		public string HttpCode { get { return httpCode; } }
+
+
+		private ResponseBuilder()
+		{
+			// Forces param constructor
+		}
+
+		// Constructor
+		// Name: ResponseBuilder
+		// Purpose: The Response builder takes in the request message received from the client and takes the web root for the server files and fills variable in information regarding the http response 
+		//			and indicates any errors found. This is mainly used to initalize variables to http request message.
+		// Parameters: 
+		//		string requestMSG: Request recieved from the server that needs to be parsed for and then used to fill in information for the response 
+		//		string webRoot: root folder location where the file Client requested can be found
 		public ResponseBuilder(string requestMsg, string webRoot)
 		{
 
-			// Validation against POST
-
 			responseHeaders = string.Empty;
-
-
-			Logger.NormalLog("Getting Path from Request");
-			string pathPattern = @"(?<=GET\s)(.*?)(?=\sHTTP/1.1)";
-
 			
-			string requestFile = Regex.Match(requestMsg, pathPattern).Value;
-		
+
+
+			//
+			// ** Clearing Syntax problems ** 
+			//
+			Logger.NormalLog("Getting Path from Request");
+			string pathPattern = @"(?<=GET\s|POST\s)(.*?)(?=\sHTTP/1.1)";
+			string protocolPattern = @"(HTTP/1.1)";
+
+
+			protocol = string.Empty;
+				
+
+			string requestFile = string.Empty;
+				
+			Match protocolMatch = Regex.Match(requestMsg, protocolPattern);
+			Match requestFileMatch = Regex.Match(requestMsg, pathPattern);
+
+			// Check if match
+			if(protocolMatch.Success) {
+
+				protocol = protocolMatch.Value;
+			}
+			if (requestFileMatch.Success)
+			{
+				requestFile = requestFileMatch.Value;
+			}
+
+
 			if (requestFile.StartsWith("/"))
 			{
 
@@ -58,30 +97,28 @@ namespace myOwnWebServer
 				path = webRoot + "\\" + requestFile;
 			}
 
+			path = Uri.UnescapeDataString(path);
 			request = requestMsg;
 			request = request.Replace("\r", " ");
 			request = request.Replace("\n", "");
 			
-
-			// Removing Filler
 			string[] requestFields = request.Split(' ');
-			//const int HOST_NAME = 4;
-			//const int REDUNDANTFILLER = 3;
-			//requestField[REDUNDANTFILLER] = requestField[HOST_NAME];
-					
-			//Array.Resize(ref requestField, 4);		
-			// Get file to open path
-			method = requestFields[0];
+		
 
-			protocol = "HTTP/1.1";
+			method = requestFields[0];
+			
 
 			Logger.RequestLog($"{method} is used used for request for file {path}");
-			
 
 			// Get Content Type
 			try
 			{
-				if (method == "POST")
+				if (protocol != "HTTP/1.1")
+				{
+					httpCode = "505 HTTP Version Not Supported";
+					errorFound = true;
+				}
+				else if (method == "POST")
 				{
 					httpCode = "405 Method Not Allowed";
 					errorFound = true;
@@ -249,19 +286,11 @@ namespace myOwnWebServer
 				server = "Llanfairpwllgwyngyll";
 
 				Logger.ErrorLog(httpCode);
-				responseHeaders = protocol + " " + httpCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
 
 			}
-			else
-			{
-				responseHeaders = protocol + " " + httpCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
-			}
+		
+			responseHeaders = protocol + " " + httpCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
 
-
-			// Get Server
-
-
-			// Get Date
 		
 		}
 
