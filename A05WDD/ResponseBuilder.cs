@@ -24,13 +24,15 @@ namespace myOwnWebServer
 		private string date;
 		private string request;
 		private string path;
-		private string HTTPCode;
+		private string httpCode;
 		private string errorMsg;
 		private bool errorFound;
 		private string responseHeaders;
 		public string ResponseHeaders { get { return responseHeaders; } }
 		public string Method { get { return method; } }
 
+		public bool ErrorFound { get { return errorFound; } }
+		public string HttpCode { get { return httpCode; } }
 		public ResponseBuilder(string requestMsg, string webRoot)
 		{
 
@@ -81,14 +83,14 @@ namespace myOwnWebServer
 			{
 				if (method == "POST")
 				{
-					HTTPCode = "405 Method Not Allowed";
+					httpCode = "405 Method Not Allowed";
 					errorFound = true;
 
 				}
 				else if (File.Exists(path) == false)
 				{
 					errorFound = true;
-					HTTPCode = "404 Not Found";
+					httpCode = "404 Not Found";
 				}
 				else
 				{
@@ -103,7 +105,7 @@ namespace myOwnWebServer
 
 					if (method == "POST")
 					{
-						HTTPCode = "405 Method Not Allowed";
+						httpCode = "405 Method Not Allowed";
 						errorFound = true;
 
 					}
@@ -126,7 +128,7 @@ namespace myOwnWebServer
 						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
 						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
 
-						HTTPCode = "200 OK";
+						httpCode = "200 OK";
 					}
 					else if (extension == ".html" || extension == ".htm" || extension == ".dhtml" || extension == ".shtml")
 					{
@@ -152,7 +154,7 @@ namespace myOwnWebServer
 						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
 
 						Logger.NormalLog("Getting Server");
-						HTTPCode = "200 OK";
+						httpCode = "200 OK";
 
 					}
 					else if (extension == ".jpeg" || extension == ".jpg")
@@ -178,7 +180,7 @@ namespace myOwnWebServer
 						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
 						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
 
-						HTTPCode = "200 OK";
+						httpCode = "200 OK";
 					}
 					else if (extension == ".gif")
 					{
@@ -203,11 +205,11 @@ namespace myOwnWebServer
 						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
 						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
 
-						HTTPCode = "200 OK";
+						httpCode = "200 OK";
 					}
 					else
 					{
-						HTTPCode = "415 Unsupported Media Type";
+						httpCode = "415 Unsupported Media Type";
 						errorFound = true;
 
 					}
@@ -215,7 +217,7 @@ namespace myOwnWebServer
 			}
 			catch (FileNotFoundException ex)
 			{
-				HTTPCode = "404 Not Found";
+				httpCode = "404 Not Found";
 				Logger.ErrorLog(ex.Message);
 				errorFound = true;
 				// RESPONSE HTTP
@@ -223,13 +225,13 @@ namespace myOwnWebServer
 			catch (IOException ex)
 			{
 
-				HTTPCode = "500 Internal Server Error ";
+				httpCode = "500 Internal Server Error ";
 				Logger.ErrorLog(ex.Message);
 				errorFound = true;
 			}
 			catch (Exception ex)
 			{
-				HTTPCode = "500 Internal Server Error";
+				httpCode = "500 Internal Server Error";
 				Logger.ErrorLog(ex.Message);
 				errorFound = true;
 			}
@@ -241,18 +243,18 @@ namespace myOwnWebServer
 				TimeZoneInfo timeInfo = TimeZoneInfo.Local;
 				date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
 				Logger.ErrorLog("Invalid Type Given");
-				content = Encoding.ASCII.GetBytes(HTTPCode);
+				content = Encoding.ASCII.GetBytes(httpCode);
 
 				contentType = "text/plain";
 				server = "Llanfairpwllgwyngyll";
 
-				Logger.ErrorLog(HTTPCode);
-				responseHeaders = protocol + " " + HTTPCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
+				Logger.ErrorLog(httpCode);
+				responseHeaders = protocol + " " + httpCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
 
 			}
 			else
 			{
-				responseHeaders = protocol + " " + HTTPCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
+				responseHeaders = protocol + " " + httpCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
 			}
 
 
@@ -276,8 +278,8 @@ namespace myOwnWebServer
 			if (errorFound == true) { 
 
 				
-				content = Encoding.ASCII.GetBytes(HTTPCode);
-				contentLength = HTTPCode.Length;
+				content = Encoding.ASCII.GetBytes(httpCode);
+				contentLength = httpCode.Length;
 				byte[] responseMSGByte = Encoding.ASCII.GetBytes(responseHeaders);
 				byte[] withContent = responseMSGByte.Concat(content).ToArray();
 				return withContent;

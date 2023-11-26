@@ -36,26 +36,24 @@ namespace myOwnWebServer
 				Environment.Exit(0);
 			}
 
-			// PArse
+			// Parse Args
 			const int WEBROOT_START_INDEX = 9;
 			const int IP_START_INDEX = 7;
 			const int PORT_START_INDEX = 9;
 
 			webRoot = args[0];
 			webRoot = webRoot.Trim().Substring(WEBROOT_START_INDEX);
-			Console.WriteLine(webRoot);
 			ip = args[1];
 			ip = ip.Trim().Substring(IP_START_INDEX);
-			Console.WriteLine(ip);
 			port = args[2];
 			port = port.Trim().Substring(PORT_START_INDEX);
-			Console.WriteLine(port);
 			Logger.StartLog("Server Received Args");
 
 			// Check if web server exists
 			if (Directory.Exists(webRoot) == false)
 			{
-				ServerUI.displayServerMsg("Web Root does not exist");
+				ServerUI.displayServerMsg("Web Root does not exist, Server Shutdown");
+				Logger.ErrorLog("Web Root does not exist");
 				Environment.Exit(0);
 			}
 
@@ -95,16 +93,24 @@ namespace myOwnWebServer
 					Logger.NormalLog("Preparing Response to request");
 					ResponseBuilder response = new ResponseBuilder(request, webRoot);
 
-					Logger.ResponseLog("Building Response Message");
+					Logger.NormalLog("Building Response Message");
 					byte[] bMsg = response.ResponseMsg();
 
 					
-					Logger.ResponseLog("Sending Response");
+					Logger.ResponseLog("Sending Response....");
 					
 					stream.Write(bMsg, 0, bMsg.Length);
 					stream.Flush();
 					string responseHeaderWithoutNewLines = response.ResponseHeaders.Replace("\r\n", " ");
-					Logger.ResponseLog($"Response Successfully Sent: \n{responseHeaderWithoutNewLines}");
+
+					if (response.ErrorFound == true)
+					{
+						Logger.ResponseLog($"Response Successfully Sent: {response.HttpCode}");
+					}
+					else
+					{
+						Logger.ResponseLog($"Response Successfully Sent: \n{responseHeaderWithoutNewLines}");
+					}
 
 					Logger.NormalLog("Closing Connection");
 					stream.Close();
@@ -119,7 +125,6 @@ namespace myOwnWebServer
 
 				ServerUI.displayServerMsg(ex.Message);
 				Logger.NormalLog(ex.Message);
-
 				Environment.Exit(0);
 			}
 			finally
