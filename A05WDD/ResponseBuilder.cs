@@ -7,6 +7,7 @@ using System.IO;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Drawing;
+using System.Runtime.Remoting.Messaging;
 
 
 namespace myOwnWebServer
@@ -24,10 +25,20 @@ namespace myOwnWebServer
 		private string request;
 		private string path;
 		private string HTTPCode;
-
+		private string errorMsg;
+		private bool errorFound;
+		private string responseHeaders;
+		public string ResponseHeaders { get { return responseHeaders; } }
+		public string Method { get { return method; } }
 
 		public ResponseBuilder(string requestMsg, string webRoot)
 		{
+
+			// Validation against POST
+
+			responseHeaders = string.Empty;
+
+
 			Logger.NormalLog("Getting Path from Request");
 			string pathPattern = @"(?<=GET\s)(.*?)(?=\sHTTP/1.1)";
 
@@ -49,6 +60,7 @@ namespace myOwnWebServer
 			request = request.Replace("\r", " ");
 			request = request.Replace("\n", "");
 			
+
 			// Removing Filler
 			string[] requestFields = request.Split(' ');
 			//const int HOST_NAME = 4;
@@ -58,143 +70,191 @@ namespace myOwnWebServer
 			//Array.Resize(ref requestField, 4);		
 			// Get file to open path
 			method = requestFields[0];
+
 			protocol = "HTTP/1.1";
 
-
+			Logger.RequestLog($"{method} is used used for request for file {path}");
+			
 
 			// Get Content Type
-			try 
+			try
 			{
-				Logger.NormalLog("Opening File");
-				FileInfo fileInfo = new FileInfo(path);
-				Logger.NormalLog("Getting content-type");
-
-				Logger.NormalLog("Reading Extension");
-				string extension = fileInfo.Extension;
-				// *************
-				// plain text
-				// **************
-				if(extension == ".txt")
+				if (method == "POST")
 				{
-					Logger.NormalLog("Setting content-type");
-					contentType = "text/plain";
-
-					Logger.NormalLog("Reading Content Length");
-					contentLength = fileInfo.Length;
-
-					Logger.NormalLog("Setting up Content");
-					content = File.ReadAllBytes(path);
-
-					Logger.NormalLog("Getting Server");
-					server = "Llanfairpwllgwyngyll";
-
-					Logger.NormalLog("Getting Time");
-					DateTime dt = DateTime.UtcNow;
-					TimeZoneInfo timeInfo = TimeZoneInfo.Local;
-					date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
-
-					HTTPCode = "200 OK";
-				}
-				else if (extension == ".html" || extension == ".htm") {
-					// ************
-					// HTML
-					// ***************
-
-					Logger.NormalLog("Setting content-type");
-					contentType = "text/html";
-					
-					Logger.NormalLog("Reading Content Length");
-					contentLength = fileInfo.Length;
-
-					Logger.NormalLog("Setting up Content");
-					content = File.ReadAllBytes(path);
-
-					Logger.NormalLog("Getting Server");
-					server = "Llanfairpwllgwyngyll";
-
-					Logger.NormalLog("Getting Time");
-					DateTime dt = DateTime.UtcNow;
-					TimeZoneInfo timeInfo = TimeZoneInfo.Local;
-					date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
-
-					Logger.NormalLog("Getting Server");
-					HTTPCode = "200 OK";
+					HTTPCode = "405 Method Not Allowed";
+					errorFound = true;
 
 				}
-				else if(extension == ".jpeg" || extension == ".jpg")
+				else if (File.Exists(path) == false)
 				{
-					// ************
-					// JPEG
-					// *************** 
-					Logger.NormalLog("Setting content-type");
-					contentType = "image/jpeg";
-
-					Logger.NormalLog("Reading Content Length");
-					contentLength = fileInfo.Length;
-
-					Logger.NormalLog("Setting up Content");
-					
-					content = File.ReadAllBytes(path); // Change to Byte if not readable in Text
-
-					Logger.NormalLog("Setting Server");
-					server = "Llanfairpwllgwyngyll";
-
-					Logger.NormalLog("Setting Time");
-					DateTime dt = DateTime.UtcNow;
-					TimeZoneInfo timeInfo = TimeZoneInfo.Local;
-					date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
-
-					HTTPCode = "200 OK";
+					errorFound = true;
+					HTTPCode = "404 Not Found";
 				}
-				else if (extension == ".gif")
+				else
 				{
-					// ************
-					// GIF
-					// *************** 
-					Logger.NormalLog("Setting content-type");
-					contentType = "image/gif";
+					Logger.NormalLog("Opening File");
+					FileInfo fileInfo = new FileInfo(path);
+					Logger.NormalLog("Getting content-type");
 
-					Logger.NormalLog("Reading Content Length");
-					contentLength = fileInfo.Length;
+					Logger.NormalLog("Reading Extension");
+					string extension = fileInfo.Extension;
 
-					Logger.NormalLog("Setting up Content");
 
-					content = File.ReadAllBytes(path);
 
-					Logger.NormalLog("Setting Server");
-					server = "Llanfairpwllgwyngyll";
+					if (method == "POST")
+					{
+						HTTPCode = "405 Method Not Allowed";
+						errorFound = true;
 
-					Logger.NormalLog("Setting Time");
-					DateTime dt = DateTime.UtcNow;
-					TimeZoneInfo timeInfo = TimeZoneInfo.Local;
-					date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+					}
+					if (extension == ".txt")
+					{
+						Logger.NormalLog("Setting content-type");
+						contentType = "text/plain";
 
-					HTTPCode = "200 OK";
+						Logger.NormalLog("Reading Content Length");
+						contentLength = fileInfo.Length;
+
+						Logger.NormalLog("Setting up Content");
+						content = File.ReadAllBytes(path);
+
+						Logger.NormalLog("Getting Server");
+						server = "Llanfairpwllgwyngyll";
+
+						Logger.NormalLog("Getting Time");
+						DateTime dt = DateTime.UtcNow;
+						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
+						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+
+						HTTPCode = "200 OK";
+					}
+					else if (extension == ".html" || extension == ".htm" || extension == ".dhtml" || extension == ".shtml")
+					{
+						// ************
+						// HTML
+						// ***************
+
+						Logger.NormalLog("Setting content-type");
+						contentType = "text/html";
+
+						Logger.NormalLog("Reading Content Length");
+						contentLength = fileInfo.Length;
+
+						Logger.NormalLog("Setting up Content");
+						content = File.ReadAllBytes(path);
+
+						Logger.NormalLog("Getting Server");
+						server = "Llanfairpwllgwyngyll";
+
+						Logger.NormalLog("Getting Time");
+						DateTime dt = DateTime.UtcNow;
+						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
+						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+
+						Logger.NormalLog("Getting Server");
+						HTTPCode = "200 OK";
+
+					}
+					else if (extension == ".jpeg" || extension == ".jpg")
+					{
+						// ************
+						// JPEG
+						// *************** 
+						Logger.NormalLog("Setting content-type");
+						contentType = "image/jpeg";
+
+						Logger.NormalLog("Reading Content Length");
+						contentLength = fileInfo.Length;
+
+						Logger.NormalLog("Setting up Content");
+
+						content = File.ReadAllBytes(path); // Change to Byte if not readable in Text
+
+						Logger.NormalLog("Setting Server");
+						server = "Llanfairpwllgwyngyll";
+
+						Logger.NormalLog("Setting Time");
+						DateTime dt = DateTime.UtcNow;
+						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
+						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+
+						HTTPCode = "200 OK";
+					}
+					else if (extension == ".gif")
+					{
+						// ************
+						// GIF
+						// *************** 
+						Logger.NormalLog("Setting content-type");
+						contentType = "image/gif";
+
+						Logger.NormalLog("Reading Content Length");
+						contentLength = fileInfo.Length;
+
+						Logger.NormalLog("Setting up Content");
+
+						content = File.ReadAllBytes(path);
+
+						Logger.NormalLog("Setting Server");
+						server = "Llanfairpwllgwyngyll";
+
+						Logger.NormalLog("Setting Time");
+						DateTime dt = DateTime.UtcNow;
+						TimeZoneInfo timeInfo = TimeZoneInfo.Local;
+						date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+
+						HTTPCode = "200 OK";
+					}
+					else
+					{
+						HTTPCode = "415 Unsupported Media Type";
+						errorFound = true;
+
+					}
 				}
-
-
-				// ************
-				// XHTML
-				// *************** 
-
 			}
 			catch (FileNotFoundException ex)
 			{
 				HTTPCode = "404 Not Found";
 				Logger.ErrorLog(ex.Message);
+				errorFound = true;
 				// RESPONSE HTTP
 			}
-			catch(IOException ex) {
+			catch (IOException ex)
+			{
 
 				HTTPCode = "500 Internal Server Error ";
 				Logger.ErrorLog(ex.Message);
+				errorFound = true;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				HTTPCode = "500 Internal Server Error";
 				Logger.ErrorLog(ex.Message);
+				errorFound = true;
 			}
 			
+			
+			if(errorFound == true)
+			{
+				DateTime dt = DateTime.UtcNow;
+				TimeZoneInfo timeInfo = TimeZoneInfo.Local;
+				date = dt.ToLongDateString() + " " + dt.ToString($"HH:mm:ss \"GMT\"");
+				Logger.ErrorLog("Invalid Type Given");
+				content = Encoding.ASCII.GetBytes(HTTPCode);
+
+				contentType = "text/plain";
+				server = "Llanfairpwllgwyngyll";
+
+				Logger.ErrorLog(HTTPCode);
+				responseHeaders = protocol + " " + HTTPCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
+
+			}
+			else
+			{
+				responseHeaders = protocol + " " + HTTPCode + "\r\nDate: " + date + "\r\nServer: " + server + "\r\nContent-Type: " + contentType + "\r\nContent:Length: " + contentLength + "\r\n\r\n";
+			}
+
 
 			// Get Server
 
@@ -205,12 +265,31 @@ namespace myOwnWebServer
 
 
 
+		//	Name: ResponseMsg
+		//  Purpose: Gets all the variable and builds a byte message using the string messag to send to the server. First checks if any error found
+		//	Parameters: NONE
+		//	Return: Byte[] that is the response with message
 		public byte[] ResponseMsg()
 		{
-			string responseMsg = protocol + " " + HTTPCode + "\r\nDate: " + date +"\r\nContent-Type: " + contentType + "\r\nServer: " + server + "\r\nContent-Length: "  + contentLength + "\r\n\r\n";
-			byte[] responseMSGByte = Encoding.ASCII.GetBytes(responseMsg);
-			byte[] withContent = responseMSGByte.Concat(content).ToArray();
-			return withContent;		
+			string responseMsg = string.Empty;
+			
+			if (errorFound == true) { 
+
+				
+				content = Encoding.ASCII.GetBytes(HTTPCode);
+				contentLength = HTTPCode.Length;
+				byte[] responseMSGByte = Encoding.ASCII.GetBytes(responseHeaders);
+				byte[] withContent = responseMSGByte.Concat(content).ToArray();
+				return withContent;
+
+			}
+			else
+			{
+				byte[] responseMSGByte = Encoding.ASCII.GetBytes(responseHeaders);
+				byte[] withContent = responseMSGByte.Concat(content).ToArray();
+				return withContent;
+			}
+			
 		}
 	}
 }

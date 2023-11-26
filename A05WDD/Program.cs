@@ -31,7 +31,8 @@ namespace myOwnWebServer
 			if (args.Length != MIN_ARGS)
 			{
 
-				Console.WriteLine("Invalid Amount of Args Provided");
+				ServerUI.displayServerMsg("Invalid Amount of Args Provided");
+				Logger.ErrorLog("Invalid Amount of Args Provided");
 				Environment.Exit(0);
 			}
 
@@ -49,7 +50,7 @@ namespace myOwnWebServer
 			port = args[2];
 			port = port.Trim().Substring(PORT_START_INDEX);
 			Console.WriteLine(port);
-
+			Logger.StartLog("Server Received Args");
 
 			// Check if web server exists
 			if (Directory.Exists(webRoot) == false)
@@ -73,12 +74,11 @@ namespace myOwnWebServer
 				server = new TcpListener(serverIP, serverPort);
 				server.Start();
 				Logger.NormalLog("Server Setup Successful");
-				Logger.RequestLog("Server Ready to Recieve Request");
-
 				while (true)
 				{
 
-					
+					Logger.RequestLog("Server Ready to Receive Request");
+
 					TcpClient client = server.AcceptTcpClient();
 					Logger.RequestLog("Request Recieved");
 					// Read the msg 
@@ -88,31 +88,43 @@ namespace myOwnWebServer
 					NetworkStream stream = client.GetStream();
 					int i = stream.Read(bytes, 0, bytes.Length);
 
-
+																								
 					string request = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
 
 
 					Logger.NormalLog("Preparing Response to request");
 					ResponseBuilder response = new ResponseBuilder(request, webRoot);
 
+					Logger.ResponseLog("Building Response Message");
 					byte[] bMsg = response.ResponseMsg();
-					// Send back the response
-					ServerUI.displayServerMsg("Message Sent Back: {0}", Encoding.ASCII.GetString(bMsg));
-					stream.Write(bMsg, 0, bMsg.Length);
 
+					
+					Logger.ResponseLog("Sending Response");
+					
+					stream.Write(bMsg, 0, bMsg.Length);
+					stream.Flush();
+					string responseHeaderWithoutNewLines = response.ResponseHeaders.Replace("\r\n", " ");
+					Logger.ResponseLog($"Response Successfully Sent: \n{responseHeaderWithoutNewLines}");
+
+					Logger.NormalLog("Closing Connection");
 					stream.Close();
 					client.Close();
+					Logger.NormalLog("Connection Successfully Closed");
 				}
 
 			}
 			catch (Exception ex)
 			{
 				// WRITE SERVER ERROR
+
 				ServerUI.displayServerMsg(ex.Message);
+				Logger.NormalLog(ex.Message);
+
 				Environment.Exit(0);
 			}
 			finally
 			{
+				Logger.NormalLog("Server Stoppped");
 				server.Stop();
 			}
 
