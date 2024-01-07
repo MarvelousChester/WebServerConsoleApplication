@@ -1,5 +1,5 @@
 ﻿/*
- * Name: Karandeep Sandhu
+ * Name: 
   Project Name : myOwnWebServer
   File Name : Logger.cs
   Date : 2023 - 11 - 22
@@ -46,10 +46,11 @@ namespace myOwnWebServer
 	*/
 		public void StartListener()
 		{
+			const int SERVER_ERROR = -1;
 			TcpListener server = null;
 			try
 			{
-
+				
 				Logger.StartLog("Setting up Server Listener");
 
 				IPAddress serverIP = IPAddress.Parse(ip);
@@ -110,7 +111,7 @@ namespace myOwnWebServer
 
 				ServerUI.displayServerMsg(ex.Message);
 				Logger.NormalLog(ex.Message);
-				Environment.Exit(0);
+				Environment.Exit(SERVER_ERROR);
 			}
 			finally
 			{

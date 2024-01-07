@@ -1,5 +1,5 @@
 ﻿/*
- * Name: Karandeep Sandhu
+ * Name: 
   Project Name : myOwnWebServer
   File Name : ResponseBuilder.cs
   Date : 2023 - 11 - 22

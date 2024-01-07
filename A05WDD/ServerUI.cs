@@ -1,7 +1,6 @@
 ﻿/*
-* Name: Karandeep Sandhu
-		 Leiya Ma
- Project Name : A05-TPI/IP
+* Name: 
+ Project Name : 
  File Name : ServerUI.cs
  Date : 2023 - 11 - 19
  Purpose : Contain the class ServerUI, which is used to display server messages

@@ -1,5 +1,5 @@
 ﻿/*
- * Name: Karandeep Sandhu
+ *
   Project Name : myOwnWebServer
   File Name : Program.cs
   Date : 2023 - 11 - 22
@@ -25,7 +25,7 @@ namespace myOwnWebServer
 		{
 
 			// CALL CLEAR LOG 
-
+			const int SERVER_ERROR = -1;
 			Logger.ClearLog();
 
 			Logger.StartLog($"Server Recieved Args: {string.Join(",", args)}");
@@ -42,13 +42,15 @@ namespace myOwnWebServer
 
 				ServerUI.displayServerMsg("Invalid Amount of Args Provided");
 				Logger.ErrorLog("Invalid Amount of Args Provided");
-				Environment.Exit(0);
+				Environment.Exit(SERVER_ERROR);
 			}
 
 			// Parse Args
 			const int WEBROOT_START_INDEX = 9;
 			const int IP_START_INDEX = 7;
 			const int PORT_START_INDEX = 9;
+
+
 
 			webRoot = args[0];
 			webRoot = webRoot.Trim().Substring(WEBROOT_START_INDEX);
@@ -58,12 +60,14 @@ namespace myOwnWebServer
 			port = port.Trim().Substring(PORT_START_INDEX);
 
 
+			
+
 			// Check if web server exists
 			if (Directory.Exists(webRoot) == false)
 			{
 				ServerUI.displayServerMsg("Web Root does not exist, Server Shutdown");
 				Logger.ErrorLog("Web Root does not exist");
-				Environment.Exit(0);
+				Environment.Exit(SERVER_ERROR);
 			}
 
 			// Start Listener
