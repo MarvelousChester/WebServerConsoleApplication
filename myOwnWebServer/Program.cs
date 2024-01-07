@@ -23,7 +23,7 @@ namespace myOwnWebServer
 	{
 		static void Main(string[] args)
 		{
-
+			
 			// CALL CLEAR LOG 
 			const int SERVER_ERROR = -1;
 			Logger.ClearLog();
@@ -69,12 +69,14 @@ namespace myOwnWebServer
 				Logger.ErrorLog("Web Root does not exist");
 				Environment.Exit(SERVER_ERROR);
 			}
+			
+			
 
 			// Start Listener
 			Listener listener = new Listener(webRoot, ip, port);
 
 			listener.StartListener();
-		
+			
 
 		}
 	}

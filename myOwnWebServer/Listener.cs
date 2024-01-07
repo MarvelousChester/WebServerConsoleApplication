@@ -59,11 +59,11 @@ namespace myOwnWebServer
 				server = new TcpListener(serverIP, serverPort);
 				server.Start();
 				Logger.NormalLog("Server Setup Successful");
+				ServerUI.displayServerMsg("Server Started");
 				while (true)
 				{
 
 					Logger.NormalLog("Server Ready to Receive Request");
-
 					TcpClient client = server.AcceptTcpClient();
 					Logger.RequestLog("Request Recieved");
 					// Read the msg 

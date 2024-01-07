@@ -1,8 +1,0 @@
-C:\Users\karandeep\source\WDDA05\WDDA05\bin\Debug\WDDA05.exe.config
-C:\Users\karandeep\source\WDDA05\WDDA05\bin\Debug\WDDA05.exe
-C:\Users\karandeep\source\WDDA05\WDDA05\bin\Debug\WDDA05.pdb
-C:\Users\karandeep\source\WDDA05\WDDA05\obj\Debug\WDDA05.csproj.AssemblyReference.cache
-C:\Users\karandeep\source\WDDA05\WDDA05\obj\Debug\WDDA05.csproj.SuggestedBindingRedirects.cache
-C:\Users\karandeep\source\WDDA05\WDDA05\obj\Debug\WDDA05.csproj.CoreCompileInputs.cache
-C:\Users\karandeep\source\WDDA05\WDDA05\obj\Debug\WDDA05.exe
-C:\Users\karandeep\source\WDDA05\WDDA05\obj\Debug\WDDA05.pdb
